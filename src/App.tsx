@@ -12,25 +12,28 @@ function App() {
 		const answer = inputField.value;
 
 		if (answer === process.env.REACT_APP_APP_PASSWORD) {
+			const div = document.getElementById("login") as HTMLDivElement;
+			div.className = "tm-container-fluid fade-out";
 			setIsVerified(true);
 		} else {
 			alert("Sorry, try again.");
+			inputField.value = "";
 		}
 	};
 
 	return (
 		<>
 			{isVerified ? <Home/> :
-				<div className={"tm-container-fluid fade-in"}>
+				<div id={"login"} className={"tm-container-fluid"}>
 
 					<section className="tm-login tm-mb-50 tm-p-50">
 						<div className={"tm-about-header tm-flex-center"}>
-							<h1>{ names }</h1>
+							<img src={"/logo.png"}/>
 						</div>
 
 						<div className="tm-contact-form-container">
 							<form className="tm-contact-form" onSubmit={checkPasswordEntry}>
-								<input className={"verification-input"} id={"password"}/>
+								<input id={"password"}/>
 								<button type="submit" className="tm-right tm-btn-submit"> Submit </button>
 							</form>
 						</div>

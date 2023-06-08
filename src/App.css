@@ -7,7 +7,7 @@ body {
     font-size: 18px;
     line-height: 2em;
     overflow-x: hidden;
-    background-color: #192033;
+    background-color: #1c282d;
 }
 
 a {
@@ -20,7 +20,7 @@ a:hover { color: #30ADAD; }
 
 .tm-about-text a { color: #9F6; }
 
-h1, h2, p, i, address, .tm-text-white { color: white; }
+h1, h2, p, i, address, .text { color: #DEC588; }
 
 .tm-link-gray { color: #999999; }
 .tm-link-white { color: white; }
@@ -47,8 +47,16 @@ h1, h2, p, i, address, .tm-text-white { color: white; }
     justify-content: center;
 }
 
+.border-solid {
+    color: #DEC588;
+    border-style: solid;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
 .tm-about,
-.tm-login,
 .tm-contact {
     display: flex;
 }
@@ -89,29 +97,29 @@ textarea {
     font-size: 1rem;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 1px solid #DEC588;
+    color: #DEC588;
     padding: 15px 0;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
 }
 
-::-webkit-input-placeholder { color: white; } /* Edge */
-:-ms-input-placeholder { color: white; } /* Internet Explorer 10-11 */
-::placeholder { color: white; }
+::-webkit-input-placeholder { color: #DEC588; } /* Edge */
+:-ms-input-placeholder { color: #DEC588; } /* Internet Explorer 10-11 */
+::placeholder { color: #DEC588; }
 .tm-right { margin-right: 0; margin-left: auto; }
 
 .tm-btn-submit {
     background: none;
-    color: white;
+    color: #DEC588;
     font-size: 1rem;
     border: 0;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.tm-btn-submit:hover { color: #000000; }
+.tm-btn-submit:hover { color: #DEC588; }
 
 .tm-flex { display: flex; }
 address { font-style: normal; }
@@ -143,8 +151,8 @@ address { font-style: normal; }
 }
 
 .tm-gallery-item img {
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
 }
 
 @media (max-width: 940px) {
@@ -170,6 +178,7 @@ address { font-style: normal; }
 }
 
 .tm-p-50 { padding: 50px; }
+.tm-p-l-r-50 { padding-left: 50px; padding-right: 50px; }
 .tm-mb-0 { margin-bottom: 0; }
 .tm-mb-30 { margin-bottom: 30px }
 .tm-mb-40 { margin-bottom: 40px; }
@@ -181,11 +190,6 @@ address { font-style: normal; }
 .tm-bgcolor-4 { background-color: #FFFFFF; }
 .tm-border-rounded { border-radius: 15px; }
 
-.verification-input {
-    color: #000000;
-    background-color: #FFFFFF;
-}
-
 .list {
     list-style:none;
     padding:0;
@@ -195,6 +199,10 @@ address { font-style: normal; }
 .fade-in {
     animation: fade 0.9s ease-in;
     animation-fill-mode : forwards;
+}
+
+.fade-out {
+    animation: fade 0.9s ease-out;
 }
 
 @keyframes fade {
