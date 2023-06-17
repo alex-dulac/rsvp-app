@@ -34,6 +34,14 @@ function Contact() {
 				</div>
 			</div>
 
+			<section className={"tm-about tm-mb-50"}>
+				<div className={"tm-flex-center"}>
+					<div className="tm-gallery-item img-lg">
+						<img src={"/images/img4.jpg"}/>
+					</div>
+				</div>
+			</section>
+
 			<section className="tm-contact tm-mb-50 text">
 				<div className="tm-contact-form-container text">
 					<form id="contact-form" className="tm-contact-form" onSubmit={sendEmail}>

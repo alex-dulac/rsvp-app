@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 :root {
     --text-color: antiquewhite;
     --background-color: #1c282d;
@@ -8,7 +10,7 @@ html { overflow-x: hidden; }
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Script', sans-serif;
+    font-family: 'sans-serif', serif;
     font-size: 18px;
     line-height: 2em;
     overflow-x: hidden;

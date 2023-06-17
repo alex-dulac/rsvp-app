@@ -1,9 +1,29 @@
 import React from 'react';
+import ImageGallery from 'react-image-gallery';
 
 function Details() {
 	const eventDate = process.env.REACT_APP_EVENT_DATE as string;
 	const eventStreetAddress = process.env.REACT_APP_EVENT_STREET_ADDRESS as string;
 	const eventCity = process.env.REACT_APP_EVENT_CITY as string;
+
+	const galleryImages = [
+		{
+			original: '/images/img2.jpg',
+			thumbnail: '/images/img2.jpg',
+		},
+		{
+			original: '/images/img03.jpg',
+			thumbnail: '/images/img03.jpg',
+		},
+		{
+			original: '/images/img1.jpg',
+			thumbnail: '/images/img1.jpg',
+		},
+		{
+			original: '/images/img4.jpg',
+			thumbnail: '/images/img4.jpg',
+		},
+	];
 
 	return (
 		<>
@@ -60,25 +80,11 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"tm-about"}>
-				<div className={"tm-flex-center"}>
-					<div className="tm-gallery-item img-md">
-						<img src={"/images/img2.jpg"}/>
-					</div>
-				</div>
-				<div className={"tm-flex-center"}>
-					<div className="tm-gallery-item img-md">
-						<img src={"/images/img03.jpg"}/>
-					</div>
-				</div>
-			</section>
-
-			<section className={"tm-about tm-mb-50"}>
-				<div className={"tm-flex-center"}>
-					<div className="tm-gallery-item img-lg">
-						<img src={"/images/img4.jpg"}/>
-					</div>
-				</div>
+			<section className={"tm-mb-50"}>
+				<ImageGallery
+					items={galleryImages}
+					autoPlay={true}
+				/>
 			</section>
 		</>
 	);
