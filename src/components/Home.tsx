@@ -5,7 +5,7 @@ import Details from "./Details";
 function Home() {
 	return (
 		<>
-			<div className={"tm-container-fluid fade-in"}>
+			<div className={"container-fluid fade-in"}>
 				<Details/>
 				<Contact/>
 			</div>

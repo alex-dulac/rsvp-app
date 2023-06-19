@@ -25,22 +25,14 @@ function Contact() {
 
 	return (
 		<>
-			<div className={"tm-flex-center text text-align-center tm-border-rounded border-solid tm-p-50 tm-mb-50"}>
-				<div className={"tm-flex-center"}>
+			<div className={"flex-center text text-align-center tm-border-rounded border-solid tm-p-50 tm-mb-50"}>
+				<div className={"flex-center"}>
 					{daysAway > 0 ? <p>Just { daysAway } days away!</p> : <p/>}
 					<p> ~ Please RSVP at your earliest convenience ~ </p>
 					<p>We can be contacted anytime by sending us an email at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> or by using the form below.</p>
 					<p> We can't wait to see you! </p>
 				</div>
 			</div>
-
-			<section className={"tm-about tm-mb-50"}>
-				<div className={"tm-flex-center"}>
-					<div className="tm-gallery-item img-lg">
-						<img src={"/images/img4.jpg"}/>
-					</div>
-				</div>
-			</section>
 
 			<section className="tm-contact tm-mb-50 text">
 				<div className="tm-contact-form-container text">
@@ -51,6 +43,14 @@ function Contact() {
 						<textarea name="message" className={"tm-mb-30 message-box"} placeholder="Message" />
 						<button type="button" className={"tm-right tm-btn-submit"}> Send </button>
 					</form>
+				</div>
+			</section>
+
+			<section className={"section tm-mb-50"}>
+				<div className={"flex-center"}>
+					<div className="tm-gallery-item img-lg">
+						<img src={"/images/img04.jpg"} alt={""} />
+					</div>
 				</div>
 			</section>
 		</>

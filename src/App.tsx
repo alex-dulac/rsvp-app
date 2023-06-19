@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Home from "./components/Home";
 
-function App() {
-	const names = process.env.REACT_APP_NAMES;
-
-	const [isVerified, setIsVerified] = useState(false);
+function App() {const [isVerified, setIsVerified] = useState(false);
 
 	const checkPasswordEntry = () => {
 		const inputField = document.getElementById("password") as HTMLInputElement;
@@ -13,7 +10,7 @@ function App() {
 
 		if (answer === process.env.REACT_APP_APP_PASSWORD) {
 			const div = document.getElementById("login") as HTMLDivElement;
-			div.className = "tm-container-fluid fade-out";
+			div.className = "container-fluid fade-out";
 			setIsVerified(true);
 		} else {
 			alert("Sorry, try again.");
@@ -24,11 +21,11 @@ function App() {
 	return (
 		<>
 			{isVerified ? <Home/> :
-				<div id={"login"} className={"tm-container-fluid"}>
+				<div id={"login"} className={"container-fluid"}>
 
 					<section className="tm-login tm-mb-50 tm-p-50">
-						<div className={"tm-about-header tm-flex-center"}>
-							<img src={"/images/logo.png"}/>
+						<div className={"tm-about-header flex-center"}>
+							<img src={"/images/logo.png"} alt=""/>
 						</div>
 
 						<div className="tm-contact-form-container">

@@ -8,55 +8,79 @@ function Details() {
 
 	const galleryImages = [
 		{
-			original: '/images/img2.jpg',
-			thumbnail: '/images/img2.jpg',
+			original: '/images/img11.jpg',
 		},
 		{
-			original: '/images/img03.jpg',
-			thumbnail: '/images/img03.jpg',
+			original: '/images/img12.jpeg',
 		},
 		{
-			original: '/images/img1.jpg',
-			thumbnail: '/images/img1.jpg',
+			original: '/images/img13.JPG',
 		},
 		{
-			original: '/images/img4.jpg',
-			thumbnail: '/images/img4.jpg',
+			original: '/images/img14.JPG',
+		},
+		{
+			original: '/images/img15.JPG',
+		},
+		{
+			original: '/images/img16.PNG',
+		},
+		{
+			original: '/images/img17.JPG',
+		},
+		{
+			original: '/images/img18.JPG',
+		},
+		{
+			original: '/images/img19.jpeg',
+		},
+		{
+			original: '/images/img20.jpeg',
+		},
+		{
+			original: '/images/img21.jpeg',
+		},
+		{
+			original: '/images/img22.jpg',
+		},
+		{
+			original: '/images/img23.jpeg',
 		},
 	];
+	galleryImages.sort( () => Math.random() - 0.5 );
 
 	return (
 		<>
-			<section className={"tm-site-header tm-flex-center"}>
+			<section className={"site-header flex-center"}>
 				<img src={"/images/logo.png"} alt={"logo"}/>
 			</section>
 
-			<section className={"tm-about"}>
-				<div className={"tm-flex-center"}>
+			<section className={"section"}>
+				<div className={"flex-center"}>
 					<div className="tm-gallery-item img-lg">
-						<img src={"/images/img3.jpg"}/>
+						<img src={"/images/img01.jpg"} alt={""} />
 					</div>
 				</div>
 			</section>
 
-			<section className={"tm-about tm-mb-50"}>
-				<div className={"tm-flex-center"}>
+			<section className={"section tm-mb-50"}>
+				<div className={"flex-center"}>
 					<div className="tm-gallery-item img-md">
-						<img src={"/images/img2.jpg"}/>
+						<img src={"/images/img02.jpg"} alt={""} />
 					</div>
 				</div>
-				<div className={"tm-flex-center"}>
+				<div className={"flex-center"}>
 					<div className="tm-gallery-item img-md">
-						<img src={"/images/img03.jpg"}/>
+						<img src={"/images/img03.jpg"} alt={""} />
 					</div>
 				</div>
 			</section>
 
-			<section className={"tm-about tm-p-50 tm-mb-50 tm-border-rounded border-solid"}>
-				<div className={"tm-about-header tm-flex-center"}>
+			<section className={"section tm-p-50 tm-mb-50 tm-border-rounded border-solid"}>
+				<div className={"tm-about-header flex-center"}>
 					<h2>Details</h2>
 				</div>
-				<div className={"tm-flex-center"}>
+				<div className={"flex-center"}>
 					<ul className={"tm-mb-40 list text"}>
 						<li>{ eventStreetAddress }</li>
 						<li>{ eventCity }</li>
@@ -66,11 +90,11 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"tm-about tm-p-50 tm-mb-50 tm-border-rounded border-solid"}>
-				<div className={"tm-about-header tm-flex-center"}>
+			<section className={"section tm-p-50 tm-mb-50 tm-border-rounded border-solid"}>
+				<div className={"tm-about-header flex-center"}>
 					<h2>Information</h2>
 				</div>
-				<div className={"tm-flex-center"}>
+				<div className={"flex-center"}>
 					<ul className={"tm-mb-40 list text"}>
 						<li>{ eventStreetAddress }</li>
 						<li>{ eventCity }</li>
@@ -80,10 +104,13 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"tm-mb-50"}>
+			<section className={"tm-mb-50 gallery"}>
 				<ImageGallery
 					items={galleryImages}
+					showThumbnails={false}
 					autoPlay={true}
+					showBullets={true}
+					showFullscreenButton={false}
 				/>
 			</section>
 		</>
