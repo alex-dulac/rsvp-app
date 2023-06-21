@@ -25,7 +25,7 @@ function Contact() {
 
 	return (
 		<>
-			<div className={"flex-center text text-align-center tm-border-rounded border-solid tm-p-50 tm-mb-50"}>
+			<div className={"flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
 				<div className={"flex-center"}>
 					{daysAway > 0 ? <p>Just { daysAway } days away!</p> : <p/>}
 					<p> ~ Please RSVP at your earliest convenience ~ </p>
@@ -34,21 +34,21 @@ function Contact() {
 				</div>
 			</div>
 
-			<section className="tm-contact tm-mb-50 text">
-				<div className="tm-contact-form-container text">
-					<form id="contact-form" className="tm-contact-form" onSubmit={sendEmail}>
+			<section className="contact mb-50 text">
+				<div className="contact-form-container text">
+					<form id="contact-form" className="contact-form" onSubmit={sendEmail}>
 						<input type="text" name="name" placeholder="Name" />
 						<input type="email" name="email" placeholder="Email" />
 						<input type="text" name="song" placeholder="Favorite Party Song" />
-						<textarea name="message" className={"tm-mb-30 message-box"} placeholder="Message" />
-						<button type="button" className={"tm-right tm-btn-submit"}> Send </button>
+						<textarea name="message" className={"mb-30 message-box"} placeholder="Message" />
+						<button type="button" className={"right btn-submit"}> Send </button>
 					</form>
 				</div>
 			</section>
 
-			<section className={"section tm-mb-50"}>
+			<section className={"section mb-50"}>
 				<div className={"flex-center"}>
-					<div className="tm-gallery-item img-lg">
+					<div className="gallery-item img-lg">
 						<img src={"/images/img04.jpg"} alt={""} />
 					</div>
 				</div>

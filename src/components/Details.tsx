@@ -51,37 +51,37 @@ function Details() {
 
 	return (
 		<>
-			<section className={"site-header flex-center"}>
-				<img src={"/images/logo.png"} alt={"logo"}/>
+			<section className={"flex-center"}>
+				<img className={"logo"} src={"/images/logo.png"} alt={"logo"}/>
 			</section>
 
 			<section className={"section"}>
 				<div className={"flex-center"}>
-					<div className="tm-gallery-item img-lg">
+					<div className="gallery-item img-lg">
 						<img src={"/images/img01.jpg"} alt={""} />
 					</div>
 				</div>
 			</section>
 
-			<section className={"section tm-mb-50"}>
+			<section className={"section mb-50"}>
 				<div className={"flex-center"}>
-					<div className="tm-gallery-item img-md">
+					<div className="gallery-item img-md">
 						<img src={"/images/img02.jpg"} alt={""} />
 					</div>
 				</div>
 				<div className={"flex-center"}>
-					<div className="tm-gallery-item img-md">
+					<div className="gallery-item img-md">
 						<img src={"/images/img03.jpg"} alt={""} />
 					</div>
 				</div>
 			</section>
 
-			<section className={"section tm-p-50 tm-mb-50 tm-border-rounded border-solid"}>
-				<div className={"tm-about-header flex-center"}>
+			<section className={"section p-50 mb-50 border-rounded border-solid"}>
+				<div className={"flex-center"}>
 					<h2>Details</h2>
 				</div>
 				<div className={"flex-center"}>
-					<ul className={"tm-mb-40 list text"}>
+					<ul className={"mb-40 list text"}>
 						<li>{ eventStreetAddress }</li>
 						<li>{ eventCity }</li>
 						<li>{ eventDate }</li>
@@ -90,12 +90,12 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"section tm-p-50 tm-mb-50 tm-border-rounded border-solid"}>
-				<div className={"tm-about-header flex-center"}>
+			<section className={"section p-50 mb-50 border-rounded border-solid"}>
+				<div className={"flex-center"}>
 					<h2>Information</h2>
 				</div>
 				<div className={"flex-center"}>
-					<ul className={"tm-mb-40 list text"}>
+					<ul className={"mb-40 list text"}>
 						<li>{ eventStreetAddress }</li>
 						<li>{ eventCity }</li>
 						<li>{ eventDate }</li>
@@ -104,7 +104,7 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"tm-mb-50 gallery"}>
+			<section className={"mb-50 gallery"}>
 				<ImageGallery
 					items={galleryImages}
 					showThumbnails={false}

@@ -20,10 +20,10 @@ body {
 a {
     text-decoration: none;
     transition: all 0.3s ease;
-    color: #4b6a78;
+    color: var(--text-color);
 }
 
-a:hover { color: #98b2be; }
+a:hover { color: #d9dffa; }
 
 h1, h2, p, i, address, .text { color: var(--text-color); }
 
@@ -54,29 +54,28 @@ h1, h2, p, i, address, .text { color: var(--text-color); }
 }
 
 .section,
-.tm-contact {
+.contact {
     display: flex;
 }
 
-.tm-contact { flex-direction: row-reverse; }
+.contact { flex-direction: row-reverse; }
 .section > div { flex: 1 1; }
-.tm-login > div { flex: 1 1; }
 
-.tm-contact-form-container {
+.contact-form-container {
     width: 100%;
 }
 
-.tm-contact-info { padding-top: 20px; }
-.tm-contact-header { width: 20%; }
+.contact-info { padding-top: 20px; }
+.contact-header { width: 20%; }
 
-.tm-contact-header {
+.contact-header {
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.tm-contact { padding: 50px 20px; }
+.contact { padding: 50px 20px; }
 
-.tm-contact > div {
+.contact > div {
     padding-left: 34px;
     padding-right: 34px;
     box-sizing: border-box;
@@ -125,9 +124,9 @@ input:-webkit-autofill{
 ::-webkit-input-placeholder { color: var(--text-color); } /* Edge */
 :-ms-input-placeholder { color: var(--text-color); } /* Internet Explorer 10-11 */
 ::placeholder { color: var(--text-color); }
-.tm-right { margin-right: 0; margin-left: auto; }
+.right { margin-right: 0; margin-left: auto; }
 
-.tm-btn-submit {
+.btn-submit {
     background: none;
     color: var(--text-color);
     font-size: 1rem;
@@ -136,27 +135,13 @@ input:-webkit-autofill{
     transition: all 0.3s ease;
 }
 
-.tm-btn-submit:hover { color: var(--text-color); }
+.btn-submit:hover { color: var(--text-color); }
 
-.tm-flex { display: flex; }
 address { font-style: normal; }
 
-.filters-button-group {
-    text-align: right;
-    padding: 0;
-    margin: 0;
-}
+.gallery { margin: -10px; }
 
-.filters-button-group li {
-    display: inline-block;
-    list-style: none;
-    margin-left: 40px;
-}
-
-.filters-button-group li a.active { color: #F96699; }
-.tm-gallery { margin: -10px; }
-
-.tm-gallery-item {
+.gallery-item {
     border-radius: 12px;
     margin: 10px;
     overflow: hidden;
@@ -184,56 +169,52 @@ address { font-style: normal; }
     width: auto;
 }
 
-@media (max-width: 940px) {
-    .filters-button-group { text-align: left; }
-}
-
 @media (max-width: 680px) {
-    .tm-contact { flex-direction: column; }
+    .contact { flex-direction: column; }
 
-    .tm-contact-form-container,
-    .tm-contact-info,
-    .tm-contact-header {
+    .contact-form-container,
+    .contact-info,
+    .contact-header {
         width: 100%;
     }
 
-    .tm-contact-form-container { margin-bottom: 20px; }
-    .tm-contact-info { margin-bottom: 30px; }
+    .contact-form-container { margin-bottom: 20px; }
+    .contact-info { margin-bottom: 30px; }
 }
 
 @media (min-width: 545px) {
     .gallery img {
         max-height: 600px !important;
     }
+
+    .password-form {
+        width: 50%;
+    }
 }
 
 @media (max-width: 545px) {
     .section { flex-direction: column; }
-    .tm-login { flex-direction: column; }
     .gallery img {
         max-height: 270px !important;
+    }
+
+    .password-form {
+        width: 100%;
     }
 }
 
 @media (max-width: 489px) {
-    .tm-gallery-item img {
+    .gallery-item img {
         width: 100%;
         height: auto;
     }
 }
 
-.tm-p-50 { padding: 50px; }
-.tm-p-l-r-50 { padding-left: 50px; padding-right: 50px; }
-.tm-mb-0 { margin-bottom: 0; }
-.tm-mb-30 { margin-bottom: 30px }
-.tm-mb-40 { margin-bottom: 40px; }
-.tm-mb-50 { margin-bottom: 50px; }
-.tm-mb-80 { margin-bottom: 80px; }
-.tm-bgcolor-1 { background-color: #800020; }
-.tm-bgcolor-2 { background-color: #DD9A87; }
-.tm-bgcolor-3 { background-color: #99CCCC; }
-.tm-bgcolor-4 { background-color: #FFFFFF; }
-.tm-border-rounded { border-radius: 15px; }
+.p-50 { padding: 50px; }
+.mb-30 { margin-bottom: 30px }
+.mb-40 { margin-bottom: 40px; }
+.mb-50 { margin-bottom: 50px; }
+.border-rounded { border-radius: 15px; }
 
 .list {
     list-style:none;
@@ -262,4 +243,8 @@ address { font-style: normal; }
 
 *:focus {
     outline: none;
+}
+
+.logo {
+    height: 550px;
 }

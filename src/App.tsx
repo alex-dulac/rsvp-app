@@ -23,15 +23,15 @@ function App() {const [isVerified, setIsVerified] = useState(false);
 			{isVerified ? <Home/> :
 				<div id={"login"} className={"container-fluid"}>
 
-					<section className="tm-login tm-mb-50 tm-p-50">
-						<div className={"tm-about-header flex-center"}>
-							<img src={"/images/logo.png"} alt=""/>
+					<section className="mb-50 p-50">
+						<div className={"flex-center"}>
+							<img className={"logo"} src={"/images/logo.png"} alt=""/>
 						</div>
 
-						<div className="tm-contact-form-container">
-							<form className="tm-contact-form" onSubmit={checkPasswordEntry}>
+						<div className="contact-form-container flex-center">
+							<form className="password-form" onSubmit={checkPasswordEntry}>
 								<input id={"password"}/>
-								<button type="submit" className="tm-right tm-btn-submit"> Enter </button>
+								<button type="submit" className="right btn-submit"> Enter </button>
 							</form>
 						</div>
 					</section>
