@@ -2,7 +2,8 @@
 
 :root {
     --text-color: antiquewhite;
-    --background-color: #1c282d;
+    /*--background-color: #1c282d;*/
+    --background-color: #273438;
 }
 
 html { overflow-x: hidden; }
@@ -18,7 +19,6 @@ body {
 }
 
 a {
-    text-decoration: none;
     transition: all 0.3s ease;
     color: var(--text-color);
 }
@@ -65,20 +65,8 @@ h1, h2, p, i, address, .text { color: var(--text-color); }
     width: 100%;
 }
 
-.contact-info { padding-top: 20px; }
-.contact-header { width: 20%; }
-
-.contact-header {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.contact { padding: 50px 20px; }
-
-.contact > div {
-    padding-left: 34px;
-    padding-right: 34px;
-    box-sizing: border-box;
+.contact {
+    padding: 20px;
 }
 
 input,
@@ -96,10 +84,13 @@ textarea {
     border-bottom: 1px solid var(--text-color);
     color: var(--text-color);
     padding: 15px 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
     width: 100%;
     resize: none;
+}
+
+form > label {
+    padding-left: 10px;
 }
 
 *::placeholder {
@@ -142,6 +133,8 @@ address { font-style: normal; }
 .gallery { margin: -10px; }
 
 .gallery-item {
+    padding: 10px;
+    border: 1px solid var(--text-color);
     border-radius: 12px;
     margin: 10px;
     overflow: hidden;
@@ -154,19 +147,7 @@ address { font-style: normal; }
 }
 
 .img-md img {
-    height: 300px;
-}
-
-.img-sq img {
-    height: 300px;
-}
-
-.img-sm img {
-    height: 250px;
-}
-
-.divider img {
-    width: auto;
+    height: 280px;
 }
 
 @media (max-width: 680px) {
@@ -224,15 +205,12 @@ address { font-style: normal; }
 
 .message-box {
     height: 150px;
+    border: 1px solid var(--text-color);
 }
 
 .fade-in {
     animation: fade 1.6s ease-in;
     animation-fill-mode : forwards;
-}
-
-.fade-out {
-    animation: fade 0.9s ease-out;
 }
 
 @keyframes fade {
@@ -247,4 +225,8 @@ address { font-style: normal; }
 
 .logo {
     height: 550px;
+}
+
+.underlined {
+    text-decoration: underline;
 }

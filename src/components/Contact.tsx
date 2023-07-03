@@ -28,7 +28,7 @@ function Contact() {
 			<div className={"flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
 				<div className={"flex-center"}>
 					{daysAway > 0 ? <p>Just { daysAway } days away!</p> : <p/>}
-					<p> ~ Please RSVP at your earliest convenience ~ </p>
+					<p> Please RSVP at your earliest convenience before August 30th </p>
 					<p>We can be contacted anytime by sending us an email at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> or by using the form below.</p>
 					<p> We can't wait to see you! </p>
 				</div>
@@ -37,10 +37,22 @@ function Contact() {
 			<section className="contact mb-50 text">
 				<div className="contact-form-container text">
 					<form id="contact-form" className="contact-form" onSubmit={sendEmail}>
-						<input type="text" name="name" placeholder="Name" />
-						<input type="email" name="email" placeholder="Email" />
-						<input type="text" name="song" placeholder="Favorite Party Song" />
-						<textarea name="message" className={"mb-30 message-box"} placeholder="Message" />
+						<input type="text" name="name"/>
+						<label className={"mb-30"}> Names</label>
+
+						<input type="email" name="email" />
+						<label className={"mb-30"}> Email</label>
+
+						<input type="text" name="food" />
+						<label className={"mb-50"}> Please list any dietary restrictions or preferences that we should know about</label>
+
+						<input type="text" name="song" />
+						<label className={"mb-50"}> Favorite Party Songs!</label>
+
+						<br/><br/>
+						<label> Message:</label>
+						<textarea name="message" className={"mb-30 message-box border-rounded border-solid"} />
+
 						<button type="button" className={"right btn-submit"}> Send </button>
 					</form>
 				</div>

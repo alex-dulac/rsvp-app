@@ -4,14 +4,14 @@ import Home from "./components/Home";
 
 function App() {const [isVerified, setIsVerified] = useState(false);
 
+	// Not the most secure thing ever, but just need a minimal, one-password entrypoint here
 	const checkPasswordEntry = () => {
 		const inputField = document.getElementById("password") as HTMLInputElement;
 		const answer = inputField.value;
 
 		if (answer === process.env.REACT_APP_APP_PASSWORD) {
-			const div = document.getElementById("login") as HTMLDivElement;
-			div.className = "container-fluid fade-out";
 			setIsVerified(true);
+			window.scrollTo({top: 0, behavior: 'smooth'});
 		} else {
 			alert("Sorry, try again.");
 			inputField.value = "";

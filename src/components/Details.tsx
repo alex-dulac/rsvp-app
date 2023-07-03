@@ -7,45 +7,19 @@ function Details() {
 	const eventCity = process.env.REACT_APP_EVENT_CITY as string;
 
 	const galleryImages = [
-		{
-			original: '/images/img11.jpg',
-		},
-		{
-			original: '/images/img12.jpeg',
-		},
-		{
-			original: '/images/img13.JPG',
-		},
-		{
-			original: '/images/img14.JPG',
-		},
-		{
-			original: '/images/img15.JPG',
-		},
-		{
-			original: '/images/img16.PNG',
-		},
-		{
-			original: '/images/img17.JPG',
-		},
-		{
-			original: '/images/img18.JPG',
-		},
-		{
-			original: '/images/img19.jpeg',
-		},
-		{
-			original: '/images/img20.jpeg',
-		},
-		{
-			original: '/images/img21.jpeg',
-		},
-		{
-			original: '/images/img22.jpg',
-		},
-		{
-			original: '/images/img23.jpeg',
-		},
+		{original: '/images/img11.jpg'},
+		{original: '/images/img12.jpeg'},
+		{original: '/images/img13.JPG'},
+		{original: '/images/img14.JPG'},
+		{original: '/images/img15.JPG'},
+		{original: '/images/img16.PNG'},
+		{original: '/images/img17.JPG'},
+		{original: '/images/img18.JPG'},
+		{original: '/images/img19.jpeg'},
+		{original: '/images/img20.jpeg'},
+		{original: '/images/img21.jpeg'},
+		{original: '/images/img22.jpg'},
+		{original: '/images/img23.jpeg'},
 	];
 	galleryImages.sort( () => Math.random() - 0.5 );
 
@@ -78,7 +52,7 @@ function Details() {
 
 			<section className={"section p-50 mb-50 border-rounded border-solid"}>
 				<div className={"flex-center"}>
-					<h2>Details</h2>
+					<h2 className={"underlined"}>Details</h2>
 				</div>
 				<div className={"flex-center"}>
 					<ul className={"mb-40 list text"}>
@@ -90,18 +64,25 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"section p-50 mb-50 border-rounded border-solid"}>
-				<div className={"flex-center"}>
-					<h2>Information</h2>
-				</div>
-				<div className={"flex-center"}>
-					<ul className={"mb-40 list text"}>
-						<li>{ eventStreetAddress }</li>
-						<li>{ eventCity }</li>
-						<li>{ eventDate }</li>
-						<li>Ceremony 3pm</li>
-					</ul>
-				</div>
+			<section className={"p-50 mb-50 border-rounded border-solid"}>
+				<h1 className={"text-align-center underlined"}>Accommodations in the Sunapee area</h1>
+				<section className={"section mb-50"}>
+					<div className={"flex-center"}>
+						<h2 className={"underlined"}>Hotel 1</h2>
+					</div>
+					<div className={"flex-center"}>
+						<p>Filler text for Hotel 1</p>
+					</div>
+				</section>
+
+				<section className={"section"}>
+					<div className={"flex-center"}>
+						<h2 className={"underlined"}>Hotel 2</h2>
+					</div>
+					<div className={"flex-center"}>
+						<p>Filler text for Hotel 2</p>
+					</div>
+				</section>
 			</section>
 
 			<section className={"mb-50 gallery"}>
@@ -111,6 +92,8 @@ function Details() {
 					autoPlay={true}
 					showBullets={true}
 					showFullscreenButton={false}
+					slideInterval={4000}
+					slideDuration={1000}
 				/>
 			</section>
 		</>
