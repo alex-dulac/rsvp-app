@@ -201,6 +201,7 @@ address { font-style: normal; }
     list-style:none;
     padding:0;
     margin:0;
+    text-align: center;
 }
 
 .message-box {

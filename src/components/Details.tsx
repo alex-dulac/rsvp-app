@@ -6,6 +6,13 @@ function Details() {
 	const eventStreetAddress = process.env.REACT_APP_EVENT_STREET_ADDRESS as string;
 	const eventCity = process.env.REACT_APP_EVENT_CITY as string;
 
+	const eventDateTime = process.env.REACT_APP_EVENT_DATETIME as string;
+	const countdownDate = new Date(eventDateTime).getTime();
+	const now = new Date().getTime();
+	const daysAway = Math.floor((countdownDate - now) / (1000 * 60 * 60 * 24));
+
+	const emailAddress = process.env.REACT_APP_EMAIL_ADDRESS as string;
+
 	const galleryImages = [
 		{original: '/images/img11.jpg'},
 		{original: '/images/img12.jpeg'},
@@ -50,41 +57,6 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"section p-50 mb-50 border-rounded border-solid"}>
-				<div className={"flex-center"}>
-					<h2 className={"underlined"}>Details</h2>
-				</div>
-				<div className={"flex-center"}>
-					<ul className={"mb-40 list text"}>
-						<li>{ eventStreetAddress }</li>
-						<li>{ eventCity }</li>
-						<li>{ eventDate }</li>
-						<li>Ceremony 3pm</li>
-					</ul>
-				</div>
-			</section>
-
-			<section className={"p-50 mb-50 border-rounded border-solid"}>
-				<h1 className={"text-align-center underlined"}>Accommodations in the Sunapee area</h1>
-				<section className={"section mb-50"}>
-					<div className={"flex-center"}>
-						<h2 className={"underlined"}>Hotel 1</h2>
-					</div>
-					<div className={"flex-center"}>
-						<p>Filler text for Hotel 1</p>
-					</div>
-				</section>
-
-				<section className={"section"}>
-					<div className={"flex-center"}>
-						<h2 className={"underlined"}>Hotel 2</h2>
-					</div>
-					<div className={"flex-center"}>
-						<p>Filler text for Hotel 2</p>
-					</div>
-				</section>
-			</section>
-
 			<section className={"mb-50 gallery"}>
 				<ImageGallery
 					items={galleryImages}
@@ -96,6 +68,24 @@ function Details() {
 					slideDuration={1000}
 				/>
 			</section>
+
+			<div className={"flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
+				<div className={"flex-center mb-40"}>
+					{daysAway > 0 ? <h2>Just { daysAway } days away! </h2> : <p/>}
+					<ul className={"mb-40 list text"}>
+						<li>{ eventStreetAddress }</li>
+						<li>{ eventCity }</li>
+						<li>{ eventDate }</li>
+						<li>Ceremony 3pm</li>
+					</ul>
+				</div>
+
+				<div className={"flex-center"}>
+					<p> Please RSVP using the form below by August 30th </p>
+					<p> You can reach out to us anytime by emailing us at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> </p>
+					<p> We can't wait to see you! </p>
+				</div>
+			</div>
 		</>
 	);
 }

@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 import Home from "./components/Home";
 
-function App() {const [isVerified, setIsVerified] = useState(false);
+function App() {
+	const [isVerified, setIsVerified] = useState(false);
 
 	// Not the most secure thing ever, but just need a minimal, one-password entrypoint here
 	const checkPasswordEntry = () => {
@@ -29,9 +30,9 @@ function App() {const [isVerified, setIsVerified] = useState(false);
 						</div>
 
 						<div className="contact-form-container flex-center">
-							<form className="password-form" onSubmit={checkPasswordEntry}>
+							<form className="password-form">
 								<input id={"password"}/>
-								<button type="submit" className="right btn-submit"> Enter </button>
+								<button className="right btn-submit" onClick={checkPasswordEntry}> Enter </button>
 							</form>
 						</div>
 					</section>
