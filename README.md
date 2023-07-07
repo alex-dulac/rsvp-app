@@ -1,8 +1,8 @@
 # rsvp-app
 
-This webpage contains a template for event details and a RSVP form.
+This webpage contains a template for event details and an RSVP form.
 
-Populate it with your own details in the `.env` file and use your own images, otherwise the idea is to be a simple plug-and-plug.
+Populate it with your own details in the `.env` file and use your own images, otherwise the idea is to be a simple plug-and-play.
 
 It uses a couple third party packages, including:
 - Emailjs (https://www.emailjs.com/) to send off the RSVP message to a desired email address.
