@@ -12,7 +12,7 @@ function App() {
 
 		if (answer === process.env.REACT_APP_APP_PASSWORD) {
 			setIsVerified(true);
-			window.scrollTo({top: 0, behavior: 'smooth'});
+			window.scrollTo({top: 0});
 		} else {
 			alert("Sorry, try again.");
 			inputField.value = "";

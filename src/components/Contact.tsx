@@ -53,7 +53,7 @@ function Contact() {
 						</div>
 					</section>
 				</> :
-				<section className="contact mb-50 text">
+				<section className="contact mb-50 text scroll-in">
 					<div className="contact-form-container text">
 						<form ref={contactForm} id="contact-form" className="contact-form" onSubmit={sendEmail}>
 							<input type="text" name="names"/>

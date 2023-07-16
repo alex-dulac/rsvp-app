@@ -27,6 +27,8 @@ function Details() {
 		{original: '/images/img21.jpeg'},
 		{original: '/images/img22.jpg'},
 		{original: '/images/img23.jpeg'},
+		{original: '/images/img24.jpg'},
+		{original: '/images/img25.jpg'},
 	];
 	galleryImages.sort( () => Math.random() - 0.5 );
 
@@ -57,7 +59,14 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"mb-50 gallery"}>
+			<div className={"scroll-in flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
+				<div className={"flex-center"}>
+					<h2> A note to our guests... </h2>
+					<p> Hello... </p>
+				</div>
+			</div>
+
+			<section className={"scroll-in mb-50 gallery"}>
 				<ImageGallery
 					items={galleryImages}
 					showThumbnails={false}
@@ -69,7 +78,7 @@ function Details() {
 				/>
 			</section>
 
-			<div className={"flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
+			<div className={"scroll-in flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
 				<div className={"flex-center mb-40"}>
 					{daysAway > 0 ? <h2>Just { daysAway } days away! </h2> : <p/>}
 					<ul className={"mb-40 list text"}>
@@ -82,8 +91,8 @@ function Details() {
 
 				<div className={"flex-center"}>
 					<p> Please RSVP using the form below by August 30th </p>
-					<p> You can reach out to us anytime by emailing us at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> </p>
-					<p> We can't wait to see you! </p>
+					<p> You can reach out to us anytime at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> </p>
+					<p> We can't wait to celebrate you! </p>
 				</div>
 			</div>
 		</>
