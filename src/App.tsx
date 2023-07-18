@@ -20,15 +20,14 @@ function App() {
 	};
 
 	return (
-		<>
+		<div className={"container-fluid"}>
+			<section className={"flex-center"}>
+				<img className={"logo"} src={"/images/logo.png"} alt={"logo"}/>
+			</section>
+
 			{isVerified ? <Home/> :
-				<div id={"login"} className={"container-fluid"}>
-
+				<div id={"login"}>
 					<section className="mb-50 p-50">
-						<div className={"flex-center"}>
-							<img className={"logo"} src={"/images/logo.png"} alt=""/>
-						</div>
-
 						<div className="contact-form-container flex-center">
 							<form className="password-form">
 								<input id={"password"}/>
@@ -38,7 +37,7 @@ function App() {
 					</section>
 				</div>
 			}
-		</>
+		</div>
 	)
 }
 

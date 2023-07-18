@@ -20,12 +20,10 @@ function Home() {
 
 	return (
 		<>
-			<div className={"container-fluid fade-in"}>
-				<Details/>
-				<Contact/>
-				<Accommodations/>
-				<Footer/>
-			</div>
+			<Details/>
+			<Contact/>
+			<Accommodations/>
+			<Footer/>
 		</>
 	);
 }

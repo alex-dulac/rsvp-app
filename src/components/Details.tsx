@@ -5,13 +5,14 @@ function Details() {
 	const eventDate = process.env.REACT_APP_EVENT_DATE as string;
 	const eventStreetAddress = process.env.REACT_APP_EVENT_STREET_ADDRESS as string;
 	const eventCity = process.env.REACT_APP_EVENT_CITY as string;
+	const emailAddress = process.env.REACT_APP_EMAIL_ADDRESS as string;
 
 	const eventDateTime = process.env.REACT_APP_EVENT_DATETIME as string;
-	const countdownDate = new Date(eventDateTime).getTime();
-	const now = new Date().getTime();
-	const daysAway = Math.floor((countdownDate - now) / (1000 * 60 * 60 * 24));
-
-	const emailAddress = process.env.REACT_APP_EMAIL_ADDRESS as string;
+	const countdownDate = new Date(eventDateTime);
+	const now = new Date();
+	const utcNow = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+	const utcEnd = Date.UTC(countdownDate.getFullYear(), countdownDate.getMonth(), countdownDate.getDate());
+	const daysAway = Math.floor((utcEnd - utcNow) / (1000 * 60 * 60 * 24));
 
 	const galleryImages = [
 		{original: '/images/img11.jpg'},
@@ -29,16 +30,15 @@ function Details() {
 		{original: '/images/img23.jpeg'},
 		{original: '/images/img24.jpg'},
 		{original: '/images/img25.jpg'},
+		{original: '/images/img26.png'},
+		{original: '/images/img27.jpg'},
+		{original: '/images/img28.jpg'},
 	];
 	galleryImages.sort( () => Math.random() - 0.5 );
 
 	return (
 		<>
-			<section className={"flex-center"}>
-				<img className={"logo"} src={"/images/logo.png"} alt={"logo"}/>
-			</section>
-
-			<section className={"section"}>
+			<section className={"section fade-in"}>
 				<div className={"flex-center"}>
 					<div className="gallery-item img-lg">
 						<img src={"/images/img01.jpg"} alt={""} />
@@ -46,7 +46,7 @@ function Details() {
 				</div>
 			</section>
 
-			<section className={"section mb-50"}>
+			<section className={"section mb-50 scroll-in"}>
 				<div className={"flex-center"}>
 					<div className="gallery-item img-md">
 						<img src={"/images/img02.jpg"} alt={""} />
@@ -79,9 +79,9 @@ function Details() {
 			</section>
 
 			<div className={"scroll-in flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
-				<div className={"flex-center mb-40"}>
+				<div className={"flex-center mb-20"}>
 					{daysAway > 0 ? <h2>Just { daysAway } days away! </h2> : <p/>}
-					<ul className={"mb-40 list text"}>
+					<ul className={"list text"}>
 						<li>{ eventStreetAddress }</li>
 						<li>{ eventCity }</li>
 						<li>{ eventDate }</li>
@@ -90,10 +90,11 @@ function Details() {
 				</div>
 
 				<div className={"flex-center"}>
-					<p> Please RSVP using the form below by August 30th </p>
-					<p> You can reach out to us anytime at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> </p>
-					<p> We can't wait to celebrate you! </p>
+					<p className={"no-margin"}> Please RSVP using the form below by August 30th </p>
+					<p className={"no-margin"}> You can reach out to us anytime at <a href={"mailto:" + emailAddress}>{ emailAddress }</a> </p>
 				</div>
+
+				<h2 className={"italic"}> We can't wait to celebrate with you! </h2>
 			</div>
 		</>
 	);
