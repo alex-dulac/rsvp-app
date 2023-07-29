@@ -4,6 +4,7 @@
 :root {
     --text-color: #fdf5ee;
     --background-color: #3f4650;
+    --font-family: 'Unna', serif;
 }
 
 html { overflow-x: hidden; }
@@ -11,10 +12,10 @@ html { overflow-x: hidden; }
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Unna', serif;
+    font-family: var(--font-family);
     font-size: 18px;
     line-height: 2em;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: var(--background-color);
 }
 
@@ -90,7 +91,10 @@ textarea {
 }
 
 form > label {
-    padding-left: 10px;
+    font-family: var(--font-family) !important;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 3em;
 }
 
 *::placeholder {
@@ -104,26 +108,31 @@ input:focus::placeholder, textarea:focus::placeholder{
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--background-color) inset !important;
-}
-
-input:-webkit-autofill{
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--text-color) !important;
+    -webkit-box-shadow: 0 0 0 30px var(--background-color) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 ::-webkit-input-placeholder { color: var(--text-color); } /* Edge */
 :-ms-input-placeholder { color: var(--text-color); } /* Internet Explorer 10-11 */
 ::placeholder { color: var(--text-color); }
+
 .right { margin-right: 0; margin-left: auto; }
 
 .btn-submit {
     background: none;
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.25rem;
     border: 0;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: var(--font-family);
 }
 
 .btn-submit:hover { color: var(--text-color); }
@@ -176,7 +185,7 @@ address { font-style: normal; }
 @media (max-width: 545px) {
     .section { flex-direction: column; }
     .gallery img {
-        max-height: 270px !important;
+        max-height: 300px !important;
     }
 
     .password-form {
@@ -196,6 +205,7 @@ address { font-style: normal; }
 .mb-30 { margin-bottom: 30px }
 .mb-40 { margin-bottom: 40px; }
 .mb-50 { margin-bottom: 50px; }
+.mb-60 { margin-bottom: 60px; }
 .border-rounded { border-radius: 15px; }
 
 .list {
@@ -244,10 +254,26 @@ address { font-style: normal; }
 .scroll-in {
     opacity: 0;
     transform: translateY(30%);
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .active {
     opacity: 4;
     transform: translateY(0);
+}
+
+input,
+textarea {
+    font-family: var(--font-family) !important;
+    font-size: 1.25rem;
+}
+
+.registry {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.closer {
+    max-width: 300px;
+    margin: 0 auto;
 }
