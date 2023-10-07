@@ -49,6 +49,7 @@ function Details() {
 				<div className={"flex-center"}>
 					<h2> A note to our guests... </h2>
 					<p> Hello... </p>
+					<p className={"italic"}> {names} </p>
 				</div>
 			</div>
 

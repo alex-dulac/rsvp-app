@@ -2,6 +2,7 @@ import Contact from "./Contact";
 import Details from "./Details";
 import Accommodations from "./Accommodations";
 import Footer from "./Footer";
+import PostEvent from "./PostEvent";
 
 function Home() {
 	const displayElement = () => {
@@ -20,10 +21,17 @@ function Home() {
 
 	return (
 		<>
+			<PostEvent/>
+			{/*
+
+			Components for the RSVP form and event details
+
 			<Details/>
 			<Contact/>
 			<Accommodations/>
 			<Footer/>
+
+			*/}
 		</>
 	);
 }

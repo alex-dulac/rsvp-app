@@ -29,7 +29,6 @@ const galleryItems = [
 	{original: '/images/gallery/img45.jpg', thumbnail: '/images/gallery/img45-thumb.jpg'},
 	{original: '/images/gallery/img46.jpg', thumbnail: '/images/gallery/img46-thumb.jpg'},
 	{original: '/images/gallery/img47.jpg', thumbnail: '/images/gallery/img47-thumb.jpg'},
-	{original: '/images/gallery/img48.jpg', thumbnail: '/images/gallery/img48-thumb.jpg'},
 	{original: '/images/gallery/img49.jpg', thumbnail: '/images/gallery/img49-thumb.jpg'},
 	{original: '/images/gallery/img50.jpg', thumbnail: '/images/gallery/img50-thumb.jpg'},
 	{original: '/images/gallery/img51.jpg', thumbnail: '/images/gallery/img51-thumb.jpg'},
