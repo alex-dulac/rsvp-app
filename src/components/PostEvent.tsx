@@ -1,36 +1,49 @@
-import React from 'react';
-import ImageGallery from 'react-image-gallery';
-import galleryItems from '../gallery-items';
+import React, { Component } from 'react';
+import axios from "axios";
 
-function PostEvent() {
-	const names = process.env.REACT_APP_NAMES as string;
+export class PostEvent extends Component {
+	public names: string = process.env.REACT_APP_NAMES as string;
+	public link: string = process.env.REACT_APP_GOOGLE_DRIVE_LINK as string;
+	public driveImageBaseUrl = 'https://lh3.googleusercontent.com/d/';
+	public state = {
+		data : []
+	};
 
-	// Set up the image gallery
-	const galleryImages = galleryItems;
-	galleryImages.sort( () => Math.random() - 0.5 );
+	async componentDidMount() {
+		// get images from Google Drive
+		try {
+			const response = await axios.get(process.env.REACT_APP_BACKEND_BASE_URL + 'getFilesByFolder');
+			const images = response.data.images;
+			images.sort(() => Math.random() - 0.5);
+			this.setState({ data: images });
+		} catch (error) {
+			console.error(error);
+		}
+	}
 
-	return (
-		<>
-			<div className={"scroll-in flex-center text text-align-center border-rounded border-solid p-50 mb-50"}>
-				<div className={"flex-center"}>
-					<h2> A note to our guests after the event... </h2>
-					<p> Here are some pictures... </p>
-					<p className={"italic"}> {names} </p>
+	render() {
+		return (
+			<>
+				<div className={"fade-in flex-center text text-align-center border-rounded border-solid p-50 mb-100"}>
+					<div className={"flex-center"}>
+						<p> Our Dear Friends & Family,<br/><br/>
+
+							...............
+						</p>
+						<p className={"italic"}> {this.names} </p>
+					</div>
 				</div>
-			</div>
 
-			<section className={"scroll-in mb-50 gallery"}>
-				<ImageGallery
-					items={galleryImages}
-					showThumbnails={true}
-					autoPlay={false}
-					showFullscreenButton={false}
-					slideInterval={4000}
-					slideDuration={1000}
-				/>
-			</section>
-		</>
-	);
+				<div className={"event-pictures"}>
+					{this.state.data.map((image) => {
+						return <div key={image} className={"scroll-in flex-center mb-30"}>
+							<div className="gallery-item img-lg">
+								<img src={this.driveImageBaseUrl + image} alt={""}/>
+							</div>
+						</div>
+					})}
+				</div>
+			</>
+		);
+	}
 }
-
-export default PostEvent;

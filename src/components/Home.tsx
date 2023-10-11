@@ -2,7 +2,7 @@ import Contact from "./Contact";
 import Details from "./Details";
 import Accommodations from "./Accommodations";
 import Footer from "./Footer";
-import PostEvent from "./PostEvent";
+import { PostEvent } from "./PostEvent";
 
 function Home() {
 	const displayElement = () => {
@@ -21,17 +21,16 @@ function Home() {
 
 	return (
 		<>
-			<PostEvent/>
 			{/*
-
 			Components for the RSVP form and event details
-
-			<Details/>
-			<Contact/>
-			<Accommodations/>
-			<Footer/>
-
+				<Details/>
+				<Contact/>
+				<Accommodations/>
+				<Footer/>
 			*/}
+
+			{/* if the event has occurred and you have pictures available, use this component to get photos from Google Drive */}
+			<PostEvent/>
 		</>
 	);
 }

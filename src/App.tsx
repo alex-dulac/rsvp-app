@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import './App.css';
 import Home from "./components/Home";
+import axios from "axios";
 
 function App() {
 	const [isVerified, setIsVerified] = useState(false);
 
-	// Not the most secure thing ever, but just need a minimal, one-password entrypoint here
-	const checkPasswordEntry = () => {
+	async function checkPassword(event: React.MouseEvent<HTMLButtonElement>) {
+		event.preventDefault();
 		const inputField = document.getElementById("password") as HTMLInputElement;
-		const answer = inputField.value;
+		const input = inputField.value;
 
-		if (answer === process.env.REACT_APP_APP_PASSWORD) {
+		const response = await axios.get(process.env.REACT_APP_BACKEND_BASE_URL + 'login', {params: {input: input}});
+
+		if (response.data.correctPassword) {
 			setIsVerified(true);
 		} else {
 			alert("Sorry, try again.");
 			inputField.value = "";
 		}
-	};
+	}
 
 	return (
 		<div className={"container-fluid"}>
@@ -30,7 +33,7 @@ function App() {
 						<div className="contact-form-container flex-center">
 							<form className="password-form">
 								<input id={"password"}/>
-								<button className="right btn-submit" onClick={checkPasswordEntry}> Enter </button>
+								<button className="right btn-submit" onClick={(event) => { checkPassword(event) }}> Enter </button>
 							</form>
 						</div>
 					</section>

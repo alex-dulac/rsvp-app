@@ -206,6 +206,7 @@ address { font-style: normal; }
 .mb-40 { margin-bottom: 40px; }
 .mb-50 { margin-bottom: 50px; }
 .mb-60 { margin-bottom: 60px; }
+.mb-100 { margin-bottom: 100px; }
 .border-rounded { border-radius: 15px; }
 
 .list {
